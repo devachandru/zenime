@@ -75,9 +75,9 @@ const Schedule = () => {
       } else {
         const data = await getSchedInfo(date);
         setscheduleData(data);
-
-        // Save the fetched data to localStorage
-        localStorage.setItem(`schedule-${date}`, JSON.stringify(data));
+        if (!data) {
+          localStorage.setItem(`schedule-${date}`, JSON.stringify([]));
+        } else localStorage.setItem(`schedule-${date}`, JSON.stringify(data));
       }
     } catch (err) {
       console.error("Error fetching Sched info:", err);
@@ -185,8 +185,16 @@ const Schedule = () => {
         <div className="w-full h-[70px] flex justify-center items-center">
           <BouncingLoader />
         </div>
+      ) : !scheduleData ? (
+        <div className="w-full h-[70px] flex justify-center items-center mt-5 text-xl">
+          No data to display
+        </div>
+      ) : scheduleData.length === 0 ? (
+        <div className="w-full h-[70px] flex justify-center items-center mt-5 text-xl">
+          No data to display
+        </div>
       ) : error ? (
-        <div className="w-full h-[70px] flex justify-center items-center">
+        <div className="w-full h-[70px] flex justify-center items-center mt-5 text-xl">
           Something went wrong
         </div>
       ) : (
@@ -201,13 +209,13 @@ const Schedule = () => {
                 <div className="flex items-center max-w-[500px] gap-x-7 max-[400px]:gap-x-2">
                   <div
                     className="text-lg font-semibold text-[#ffffff59] group-hover:text-[#ffbade] transition-all duration-300 ease-in-out max-[600px]:text-[14px]
-                  max-[275px]:text-[12px]"
+          max-[275px]:text-[12px]"
                   >
                     {item.time || "N/A"}
                   </div>
                   <h3
                     className="text-[17px] font-semibold line-clamp-1 group-hover:text-[#ffbade] transition-all duration-300 ease-in-out max-[600px]:text-[14px]
-                  max-[275px]:text-[12px]"
+          max-[275px]:text-[12px]"
                   >
                     {item.title || "N/A"}
                   </h3>

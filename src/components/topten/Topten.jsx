@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faClosedCaptioning,
@@ -32,7 +32,7 @@ function Topten({ data, className }) {
   const [hoverTimeout, setHoverTimeout] = useState(null);
   const handleMouseEnter = (item, index) => {
     const timeout = setTimeout(() => {
-      setHoveredItem(item.id+index);
+      setHoveredItem(item.id + index);
     }, 400);
     setHoverTimeout(timeout);
   };
@@ -168,4 +168,4 @@ function Topten({ data, className }) {
   );
 }
 
-export default Topten;
+export default React.memo(Topten);

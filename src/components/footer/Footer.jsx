@@ -1,9 +1,8 @@
 import logoTitle from "@/src/config/logoTitle.js";
 import website_name from "@/src/config/website.js";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Footer() {
-  const navigate = useNavigate();
   return (
     <footer className="flex flex-col w-full mt-[100px] px-4 max-[500px]:px-0">
       <div
@@ -11,7 +10,7 @@ function Footer() {
         className="w-full text-left max-[500px]:hidden"
       >
         <img
-          src="https://iili.io/2H76i57.png"
+          src="https://i.postimg.cc/SsKY6Y9f/2H76i57.png"
           alt={logoTitle}
           className="w-[200px] h-[100px]"
         />

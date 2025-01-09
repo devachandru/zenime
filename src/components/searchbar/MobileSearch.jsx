@@ -8,7 +8,6 @@ function MobileSearch() {
     const navigate = useNavigate();
     const {
         isSearchVisible,
-        setIsSearchVisible,
         searchValue,
         setSearchValue,
         isFocused,

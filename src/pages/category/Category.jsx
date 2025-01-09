@@ -53,7 +53,7 @@ function Category({ path, label }) {
     <div className="w-full flex flex-col gap-y-4 mt-[64px] max-md:mt-[50px]">
       <div className="w-full flex gap-x-4 items-center bg-[#191826] p-5 max-[575px]:px-3 max-[320px]:hidden">
         <img
-          src="https://s11.gifyu.com/images/SBdmo.gif"
+          src="https://i.postimg.cc/d34WWyNQ/share-icon.gif"
           alt="Share Anime"
           className="w-[60px] h-auto rounded-full max-[1024px]:w-[40px] max-[575px]:hidden"
         />

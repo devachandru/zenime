@@ -37,7 +37,7 @@ function Voiceactor({ animeInfo, className }) {
                       title={character.character.name || "Character"}
                       alt={character.character.name || "Character"}
                       onError={(e) => {
-                        e.target.src = "https://iili.io/2J1Rwnp.jpg";
+                        e.target.src = "https://i.postimg.cc/HnHKvHpz/no-avatar.jpg";
                       }}
                       className="w-[45px] h-[45px] flex-shrink-0 rounded-full object-cover"
                       loading="lazy"
@@ -75,7 +75,7 @@ function Voiceactor({ animeInfo, className }) {
                       alt={character.voiceActors[0].name || "Voice Actor"}
                       loading="lazy"
                       onError={(e) => {
-                        e.target.src = "https://iili.io/2J1Rwnp.jpg";
+                        e.target.src = "https://i.postimg.cc/HnHKvHpz/no-avatar.jpg";
                       }}
                       className="w-[45px] h-[45px] rounded-full object-cover grayscale hover:grayscale-0 hover:cursor-pointer flex-shrink-0 transition-all duration-300 ease-in-out"
                     />

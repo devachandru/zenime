@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 function WebSearch() {
     const navigate = useNavigate();
     const {
-        isSearchVisible,
         setIsSearchVisible,
         searchValue,
         setSearchValue,

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faClosedCaptioning,
@@ -139,4 +139,4 @@ function Sidecard({ data, label, className, limit }) {
   );
 }
 
-export default Sidecard;
+export default React.memo(Sidecard);

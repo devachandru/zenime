@@ -21,7 +21,7 @@ import {
   playIconLg,
   settingsIcon,
   volumeIcon,
-} from "./PlayerStyle";
+} from "./PlayerIcons";
 import "./Player.css";
 import website_name from "@/src/config/website";
 import getChapterStyles from "./getChapterStyle";
@@ -410,6 +410,10 @@ export default function Player({
             vtt: `${proxy}${thumbnail}`,
           })
         );
+      const defaultEnglishSub =
+        subtitles.find(
+          (sub) => sub.label.toLowerCase() === "english" && sub.default
+        ) || subtitles.find((sub) => sub.label.toLowerCase() === "english");
       subtitles &&
         subtitles.length > 0 &&
         art.setting.add({
@@ -431,7 +435,9 @@ export default function Player({
               },
             },
             ...subtitles.map((sub) => ({
-              default: sub.label === "English",
+              default:
+                sub.label.toLowerCase() === "english" &&
+                sub === defaultEnglishSub,
               html: sub.label,
               url: sub.file,
             })),
@@ -444,10 +450,13 @@ export default function Player({
       {
         autoSkipIntro && art.plugins.add(autoSkip(ranges));
       }
-      const defaultSubtitle = subtitles?.find((sub) => sub.label === "English");
+      const defaultSubtitle = subtitles?.find(
+        (sub) => sub.label.toLowerCase() === "english"
+      );
       if (defaultSubtitle) {
         art.subtitle.switch(defaultSubtitle.file, {
           name: defaultSubtitle.label,
+          default: true,
         });
       }
       const $rewind = art.layers["rewind"];

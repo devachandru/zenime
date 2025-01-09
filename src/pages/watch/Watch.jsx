@@ -190,7 +190,7 @@ export default function Watch() {
           src={
             !animeInfoLoading
               ? animeInfo?.poster
-              : "https://iili.io/2KnKzog.md.webp"
+              : "https://i.postimg.cc/rFZnx5tQ/2-Kn-Kzog-md.webp"
           }
           alt={`${animeInfo?.title} Poster`}
           className="absolute inset-0 w-full h-full object-cover filter grayscale z-[-900]"
@@ -320,7 +320,7 @@ export default function Watch() {
                         >
                           {season.season}
                         </p>
-                        <div className="absolute inset-0 z-10 bg-[url('https://i.ibb.co/25B65jX/thumb.png')] bg-repeat"></div>
+                        <div className="absolute inset-0 z-10 bg-[url('https://i.postimg.cc/pVGY6RXd/thumb.png')] bg-repeat"></div>
                         <img
                           src={season.season_poster}
                           alt=""
@@ -477,7 +477,7 @@ export default function Watch() {
       </div>
       <div className="w-full flex gap-x-4 items-center bg-[#191826] p-5 max-[575px]:px-3 max-[320px]:hidden">
         <img
-          src="https://s11.gifyu.com/images/SBdmo.gif"
+          src="https://i.postimg.cc/d34WWyNQ/share-icon.gif"
           alt="Share Anime"
           className="w-[60px] h-auto rounded-full max-[1024px]:w-[40px] max-[575px]:hidden"
         />

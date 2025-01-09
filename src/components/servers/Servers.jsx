@@ -15,14 +15,13 @@ function Servers({
 }) {
   const subServers = servers?.filter((server) => server.type === "sub") || [];
   const dubServers = servers?.filter((server) => server.type === "dub") || [];
-
   return (
     <div className="relative bg-[#11101A] p-4 w-full min-h-[100px] flex justify-center items-center max-[1200px]:bg-[#14151A]">
       {serverLoading ? (
         <div className="w-full h-full rounded-lg flex justify-center items-center max-[600px]:rounded-none">
           <BouncingLoader />
         </div>
-      ) : servers?.length > 0 ? (
+      ) : servers ? (
         <div className="w-full h-full rounded-lg grid grid-cols-[minmax(0,30%),minmax(0,70%)] overflow-hidden max-[800px]:grid-cols-[minmax(0,40%),minmax(0,60%)] max-[600px]:flex max-[600px]:flex-col max-[600px]:rounded-none">
           <div className="h-full bg-[#ffbade] px-6 text-black flex flex-col justify-center items-center gap-y-2 max-[600px]:bg-transparent max-[600px]:h-1/2 max-[600px]:text-white max-[600px]:mb-4">
             <p className="text-center leading-5 font-medium text-[14px]">
